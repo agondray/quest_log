@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   scope :api do
     namespace :v1, defaults: { format: 'json' } do
       resources :users
+      resources :quest_tasks
+      resources :quest_cards
+      resources :quest_boards
     end
   end
 end

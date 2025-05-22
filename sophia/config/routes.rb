@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  resources :quest_tasks
-  resources :quest_cards
-  resources :quest_boards
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,6 +11,9 @@ Rails.application.routes.draw do
   scope :api do
     namespace :v1, defaults: { format: 'json' } do
       resources :users
+      resources :quest_tasks
+      resources :quest_cards
+      resources :quest_boards
     end
   end
 end

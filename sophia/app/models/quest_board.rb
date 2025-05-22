@@ -1,0 +1,2 @@
+class QuestBoard < ApplicationRecord
+end

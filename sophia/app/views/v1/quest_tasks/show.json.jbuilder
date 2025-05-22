@@ -1,1 +1,1 @@
-json.partial! "quest_tasks/quest_task", quest_task: @quest_task
+json.partial! "v1/quest_tasks/quest_task", quest_task: @quest_task

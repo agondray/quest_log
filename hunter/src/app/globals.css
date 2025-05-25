@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.card {
+    width: 300px;
+    margin: 1rem 5px;
+    min-height: 250px;
+}

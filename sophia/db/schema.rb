@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_21_012659) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_22_212011) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
+
+  create_table "quest_boards", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "deleted_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quest_cards", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "quest_board_id"
+    t.datetime "archived_at", precision: nil
+    t.datetime "deleted_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "quest_tasks", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "quest_card_id"
+    t.datetime "archived_at", precision: nil
+    t.datetime "deleted_at", precision: nil
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
